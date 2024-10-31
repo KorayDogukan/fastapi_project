@@ -5,9 +5,9 @@ services:
     build: .
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
     env_file:
-      - .env               # .env dosyasını yüklemek için
+      - .env               
     ports:
-      - "8000:8000"        # API'yi 8000 numaralı porta yönlendirir
+      - "8000:8000"       
     depends_on:
       - postgres
       - redis
@@ -15,9 +15,9 @@ services:
   postgres:
     image: postgres:13
     environment:
-      POSTGRES_USER: ${POSTGRES_USER}       # .env dosyasındaki kullanıcı adı
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}  # .env dosyasındaki şifre
-      POSTGRES_DB: ${POSTGRES_DB}           # .env dosyasındaki veritabanı adı
+      POSTGRES_USER: ${POSTGRES_USER}      
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD} 
+      POSTGRES_DB: ${POSTGRES_DB}          
     ports:
       - "5432:5432"
     volumes:

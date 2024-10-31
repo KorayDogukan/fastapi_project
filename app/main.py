@@ -24,7 +24,6 @@ def login(user: schemas.UserCreate, db: Session = Depends(get_db)):
 
 @app.delete("/logout")
 def logout(token: str):
-    # Redis işlemi ile token iptal işlemi yapılır.
     pass
 
 @app.get("/user/{user_id}", response_model=schemas.User)
